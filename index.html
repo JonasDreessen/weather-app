@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="./style/style.css">
     <title>Weather app</title>
 </head>
+
 <body>
     <div class="page-header-title">
         <h2>Weather app</h2>
@@ -14,14 +16,17 @@
 
     <section class="city-input-section">
         <div class="input-container">
-
             <input type="text" class="city" placeholder="what city do you live in?">
-
+            <div id="description"></div>
+            <div id="temp"></div>
+            <div id="location"></div>
         </div>
     </section>
 
 
     <script src="city.list.json"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="./js/main.js"></script>
 </body>
+
 </html>
