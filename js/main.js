@@ -8,16 +8,23 @@ function getWeather(){
     let city = input.value;
     let api = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&mode=json&&APPID=${key}`;
     let response = await axios.get(api);
-    displayWeather( response );
+    displayWeather(response);
     
   })
 }
+
 getWeather();
 
-function displayWeather( response ) {
-	var celcius = Math.round(parseFloat(response.main.temp)-273.15);
-	
-	document.getElementById('description').innerHTML = response.weather[0].description;
-	document.getElementById('temp').innerHTML = celcius + '&deg;';
-	document.getElementById('location').innerHTML = response.name;
+function displayWeather(response) {
+	var celcius = Math.round(parseFloat(response.data.list[0].main.temp)-273.15);
+  var weatherDescription = response.data.list[0].weather[0].description;
+  var weatherHumidity = response.data.list[0].main.humidity;
+  var cityName = response.data.city.name;
+
+  document.getElementById("description").innerHTML = weatherDescription;
+  document.getElementById("temp").innerHTML = celcius + "(c)";
+  document.getElementById("humidity").innerHTML = `humidity: ${weatherHumidity}%`;
+  document.getElementById("location").innerHTML = cityName;
+
+  console.log(response.data);
 }
