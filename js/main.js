@@ -17,6 +17,20 @@ function getWeather() {
 
 getWeather();
 
+function cityPicture() {
+  button.addEventListener('click', async function () {
+    //let city = input.value;
+    let api = `https://api.unsplash.com/photos/query?antwerpen`;
+    let response = await axios.get(api);
+    console.log(response);
+
+  })
+}
+cityPicture();
+
+
+
+
 function displayWeather(response) {
   //var celcius = Math.round(parseFloat(response.data.list[0].main.temp)-273.15);
   //var weatherDescription = response.data.list[0].weather[0].description;

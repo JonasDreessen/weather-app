@@ -31,12 +31,14 @@ body {
     text-align: center;
     font-size: 0.8em;
     padding: 5px;
-    border-radius: 10px
+    border-radius: 10px;
+    text-transform: uppercase;
 }
 
 ::placeholder{
     color: #212224;
     font-size: 1em;
+    text-transform: lowercase;
 }
 
 .submit-city {

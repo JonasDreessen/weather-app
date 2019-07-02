@@ -31,26 +31,31 @@ body {
   font-size: 0.8em;
   padding: 5px;
   border-radius: 10px;
+  text-transform: uppercase;
 }
 
 ::-webkit-input-placeholder {
   color: #212224;
   font-size: 1em;
+  text-transform: lowercase;
 }
 
 :-ms-input-placeholder {
   color: #212224;
   font-size: 1em;
+  text-transform: lowercase;
 }
 
 ::-ms-input-placeholder {
   color: #212224;
   font-size: 1em;
+  text-transform: lowercase;
 }
 
 ::placeholder {
   color: #212224;
   font-size: 1em;
+  text-transform: lowercase;
 }
 
 .submit-city {
