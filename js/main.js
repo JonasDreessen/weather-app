@@ -56,13 +56,31 @@ function displayWeather(response) {
   friday.querySelector(".description").innerHTML = response.data.list[32].weather[0].description;
   friday.querySelector(".city-name").innerHTML = response.data.city.name;
 
-  // background styling
-  var dayForecastList = document.querySelectorAll('.dayforecast');
-  var descriptionList = [];
-  dayForecastList.forEach(result => {
-    console.log(result.querySelector('.description').innerText)
-  });
 
+  // icon variables
+  var mondayIcon = response.data.list[0].weather[0].icon;
+  var tuesdayIcon = response.data.list[8].weather[0].icon;
+  var wednesdayIcon = response.data.list[16].weather[0].icon;
+  var thursdayIcon = response.data.list[24].weather[0].icon;
+  var fridayIcon = response.data.list[32].weather[0].icon;
+
+  var iconArray = [mondayIcon, tuesdayIcon, wednesdayIcon, thursdayIcon, fridayIcon];
+
+  // background styling
+  monday.style.backgroundImage = `url(http://openweathermap.org/img/wn/${iconArray[0]}@2x.png)`;
+
+  tuesday.style.backgroundImage = `url(http://openweathermap.org/img/wn/${iconArray[1]}@2x.png)`;
+
+  wednesday.style.backgroundImage = `url(http://openweathermap.org/img/wn/${iconArray[2]}@2x.png)`;
+
+  thursday.style.backgroundImage = `url(http://openweathermap.org/img/wn/${iconArray[3]}@2x.png)`;
+
+  friday.style.backgroundImage = `url(http://openweathermap.org/img/wn/${iconArray[4]}@2x.png)`;
 
 
 }
+
+var d = new Date();
+var n = d.getDay();
+
+console.log(n);
