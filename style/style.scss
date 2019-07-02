@@ -34,6 +34,11 @@ body {
     border-radius: 10px
 }
 
+::placeholder{
+    color: #212224;
+    font-size: 1em;
+}
+
 .submit-city {
     display: block;
     margin-left: auto;
@@ -43,10 +48,12 @@ body {
     height: 30px;
     font-size: 1em;
     border-radius: 30px;
+    color: #212224;
     background-color: #cccccc;
     box-shadow: -8px 5px 21px 1px rgba(0, 0, 0, 0.75);
     -webkit-box-shadow: -8px 5px 21px 1px rgba(0, 0, 0, 0.75);
     -moz-box-shadow: -8px 5px 21px 1px rgba(0, 0, 0, 0.75);
+    
 }
 
 .weather-result-container {
@@ -76,4 +83,5 @@ body {
 .day {
     font-size: 2em;
     margin-bottom: 20px;
+    font-weight: bold;
 }
