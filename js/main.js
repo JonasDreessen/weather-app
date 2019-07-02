@@ -16,15 +16,47 @@ function getWeather(){
 getWeather();
 
 function displayWeather(response) {
-	var celcius = Math.round(parseFloat(response.data.list[0].main.temp)-273.15);
-  var weatherDescription = response.data.list[0].weather[0].description;
-  var weatherHumidity = response.data.list[0].main.humidity;
-  var cityName = response.data.city.name;
+	//var celcius = Math.round(parseFloat(response.data.list[0].main.temp)-273.15);
+  //var weatherDescription = response.data.list[0].weather[0].description;
+  //var weatherHumidity = response.data.list[0].main.humidity;
+  //var cityName = response.data.city.name;
+  var monday = document.querySelector(".monday");
+  var tuesday = document.querySelector(".tuesday");
+  var wednesday = document.querySelector(".wednesday");
+  var thursday = document.querySelector(".thursday");
+  var friday = document.querySelector(".friday");
+  console.log(response.data.list);
+  
+  // monday results
+  monday.querySelector(".temperature").innerHTML = Math.round(parseFloat(response.data.list[0].main.temp)-273.15) + ' degrees';
+  monday.querySelector(".humidity").innerHTML = response.data.list[0].main.humidity + '%';
+  monday.querySelector(".description").innerHTML = response.data.list[0].weather[0].description;
+  monday.querySelector(".city-name").innerHTML = response.data.city.name;
 
-  document.getElementById("description").innerHTML = weatherDescription;
-  document.getElementById("temp").innerHTML = celcius + "(c)";
-  document.getElementById("humidity").innerHTML = `humidity: ${weatherHumidity}%`;
-  document.getElementById("location").innerHTML = cityName;
+  // tuesday resuts 
 
-  console.log(response.data);
+  tuesday.querySelector(".temperature").innerHTML = Math.round(parseFloat(response.data.list[8].main.temp)-273.15) + ' degrees';
+  tuesday.querySelector(".humidity").innerHTML = response.data.list[8].main.humidity + '%';
+  tuesday.querySelector(".description").innerHTML = response.data.list[8].weather[0].description;
+  tuesday.querySelector(".city-name").innerHTML = response.data.city.name;
+
+  // wednesday results 
+
+  wednesday.querySelector(".temperature").innerHTML = Math.round(parseFloat(response.data.list[16].main.temp)-273.15) + ' degrees';
+  wednesday.querySelector(".humidity").innerHTML = response.data.list[16].main.humidity + '%';
+  wednesday.querySelector(".description").innerHTML = response.data.list[16].weather[0].description;
+  wednesday.querySelector(".city-name").innerHTML = response.data.city.name;
+
+  // thursday results 
+  thursday.querySelector(".temperature").innerHTML = Math.round(parseFloat(response.data.list[24].main.temp)-273.15) + ' degrees';
+  thursday.querySelector(".humidity").innerHTML = response.data.list[24].main.humidity + '%';
+  thursday.querySelector(".description").innerHTML = response.data.list[24].weather[0].description;
+  thursday.querySelector(".city-name").innerHTML = response.data.city.name;
+
+  // friday results 
+
+  friday.querySelector(".temperature").innerHTML = Math.round(parseFloat(response.data.list[32].main.temp)-273.15) + ' degrees';
+  friday.querySelector(".humidity").innerHTML = response.data.list[32].main.humidity + '%';
+  friday.querySelector(".description").innerHTML = response.data.list[32].weather[0].description;
+  friday.querySelector(".city-name").innerHTML = response.data.city.name;
 }
