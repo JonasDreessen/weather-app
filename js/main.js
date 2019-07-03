@@ -5,6 +5,7 @@ var d = new Date();
 var currentDay = d.getDay();
 var weekDays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 
+// get API from openweathermap
 function getWeather() {
   button.addEventListener('click', async function () {
     let city = input.value;
@@ -17,25 +18,26 @@ function getWeather() {
 
 getWeather();
 
+// get API from unsplash
 function cityPicture() {
   button.addEventListener('click', async function () {
-    //let city = input.value;
-    let api = `https://api.unsplash.com/photos/query?antwerpen`;
-    let response = await axios.get(api);
-    console.log(response);
+    let city = input.value;
+    let api = `https://api.unsplash.com/search/photos?client_id=b535a6cdbbb518287e5f7eb089405bc997d29c813ceb4d1084b50780299331c9&page=1&query=${city}`;
+    let secondResponse = await axios.get(api);
+    displayCityPicture(secondResponse);
 
   })
 }
 cityPicture();
 
-
+function displayCityPicture(secondResponse) {
+  let imageSource = secondResponse.data.results[1].urls.full;
+  document.body.style.backgroundImage = `url(${imageSource})`;
+}
 
 
 function displayWeather(response) {
-  //var celcius = Math.round(parseFloat(response.data.list[0].main.temp)-273.15);
-  //var weatherDescription = response.data.list[0].weather[0].description;
-  //var weatherHumidity = response.data.list[0].main.humidity;
-  //var cityName = response.data.city.name;
+
   var monday = document.querySelector(".monday");
   var tuesday = document.querySelector(".tuesday");
   var wednesday = document.querySelector(".wednesday");
